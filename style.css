@@ -1,0 +1,105 @@
+body {
+  background-color: #e0f1f1;
+  padding: 20px;
+}
+fieldset {
+  margin-bottom: 2rem;
+}
+.container {
+  /* max-width: 650px; */
+  max-width: 64%;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 9px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+form {
+  margin-bottom: 0px;
+}
+
+table {
+  margin-bottom: 20px;
+  width: 100%;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header p {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0px;
+  margin: 31px 0px 0px 0px;
+}
+
+label {
+  font-size: 17px;
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input,
+select,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 9px 9px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="checkbox"],
+input[type="radio"],
+.checkboxLabel {
+  width: auto;
+  display: inline-block;
+}
+.error-message {
+  color: red;
+  display: none;
+}
+#submitBtn {
+  margin-top: 2rem;
+  display: block;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #61c5bf;
+  color: black;
+  cursor: pointer;
+}
+button {
+  display: block;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #61c5bf;
+  color: black;
+  cursor: pointer;
+}
+#submitBtn:hover {
+  background-color: aqua;
+}
+button:hover {
+  background-color: aqua;
+}
+.error {
+  border-color: red;
+}
+.success {
+  border-color: green;
+}
+td {
+  /* width: 10vh; */
+  height: 10vh;
+  text-align: center;
+}
+.editBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.emailClass {
+  width: 37vh;
+}
