@@ -239,9 +239,7 @@ $(document).ready(function () {
       editingUserId = user.id;
       $("#formContainer").show();
       $("#tableContainer").hide();
-      // Handling the adult checkbox
       if (user.adult === "Yes") {
-        // Adjust based on your data structure
         $("#adultY").prop("checked", true);
       } else {
         $("#adultY").prop("checked", false);
