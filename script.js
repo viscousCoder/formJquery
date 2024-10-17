@@ -98,7 +98,11 @@ $(document).ready(function () {
                           <td class="emailClass">${user.email}</td>
                           <td>${user.age}</td>
                           <td>${user.state}</td>
-                          <td class="editBtn"><button onclick="editUser(${user.id})">Edit</button></td>
+                          <td class="editBtn">
+                          <button onclick="editUser(${user.id})">Edit</button>
+                          <button class="actionBtn" onClick="deleteUser(${user.id})" >Delete</button>
+                          <button class="actionBtn" onClick="viewUser(${user.id})" >View</button>
+                          </td>
                       </tr>
                   `);
       });
@@ -224,6 +228,31 @@ $(document).ready(function () {
     $("#tableContainer").hide();
   });
 
+  window.deleteUser = function (id) {
+    users = users.filter((u) => u.id !== id);
+    localStorage.setItem("users", JSON.stringify(users));
+    renderTable();
+  };
+
+  window.viewUser = function (id) {
+    const user = users.find((u) => u.id === id);
+    if (user) {
+      $("#modalName").text(user.name);
+      $("#modalAge").text(user.age);
+      $("#modalDistrict").text(user.district);
+      $("#modalState").text(user.state);
+      $("#modalContact").text(user.contact);
+      $("#modalGender").text(user.gender);
+      $("#modalAdult").text(user.adult);
+
+      $("#userModal").show();
+    }
+  };
+
+  $("#modalClose").on("click", function () {
+    $("#userModal").hide();
+  });
+
   window.editUser = function (id) {
     const user = users.find((u) => u.id === id);
     if (user) {
@@ -234,7 +263,11 @@ $(document).ready(function () {
       age.val(user.age);
       $(`input[name='gender'][value='${user.gender}']`).prop("checked", true);
       state.val(user.state);
-      district.val(user.district);
+      populateDistricts();
+      setTimeout(() => {
+        district.val(user.district);
+      }, 0);
+
       address.val(user.address);
       editingUserId = user.id;
       $("#formContainer").show();
