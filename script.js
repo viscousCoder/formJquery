@@ -108,6 +108,24 @@ $(document).ready(function () {
       });
     }
   }
+  $("#email").on("input", (event) => {
+    const input = event.target;
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,3}$/.test(input.value);
+    console.log(isValid, "Aman", input);
+    if (!isValid) {
+      showError(email, "emailError", false);
+      // input.classList.add("input-error");
+    } else {
+      console.log("here");
+      // $("#emailError").hide();
+      // input.remove("error input-error");
+      // input.remove("error").remove("success");
+      // showSuccess(email, "emailError");
+
+      $("#emailError").hide();
+      email.removeClass("error");
+    }
+  });
 
   userForm.submit(function (event) {
     event.preventDefault();
@@ -207,9 +225,15 @@ $(document).ready(function () {
     }
   });
 
-  function showError(input, errorId) {
-    $(`#${errorId}`).show();
-    input.addClass("error").removeClass("success");
+  function showError(input, errorId, emailData = true) {
+    if (emailData) {
+      $(`#${errorId}`).show();
+      input.addClass("error").removeClass("success");
+    } else {
+      $(`#${errorId}`).text("");
+      $(`#${errorId}`).show().text("Invalid Email");
+      input.addClass("error").removeClass("success");
+    }
   }
 
   function showSuccess(input, errorId) {

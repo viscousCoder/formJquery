@@ -79,10 +79,10 @@ button {
   cursor: pointer;
 }
 #submitBtn:hover {
-  background-color: aqua;
+  background-color: #61a39f;
 }
 button:hover {
-  background-color: aqua;
+  background-color: #61a39f;
 }
 .error {
   border-color: red;
@@ -147,4 +147,23 @@ td {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: lightgray;
+}
+
+input,
+textarea {
+  color: lightgray;
+  border: 1px solid #ccc;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+input:not(:placeholder-shown),
+textarea:not(:placeholder-shown) {
+  color: black;
 }
