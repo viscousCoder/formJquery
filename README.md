@@ -45,3 +45,15 @@ First, clone the repository to your local machine using the following command:
 
 ```bash
 git clone https://github.com/viscousCoder/formJquery.git
+
+```
+
+### Key Updates:
+1. **Live Demo Link**: I've included the [deployment link](https://jquery-form-validation001.netlify.app/) to access the live demo of the project.
+   
+2. **Run Locally with Live Server**: Added instructions to run the project on a live server using Visual Studio Code's **Live Server** extension.
+
+
+
+This README should now provide a complete guide to set up, run, and contribute to your project.
+
